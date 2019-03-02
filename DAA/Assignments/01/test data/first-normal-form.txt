@@ -1,0 +1,70 @@
+First Normal Form ?
+
+ 
+First normal form is the first step in database normalization. Following conditions need to be satisfied for a table to be in the first normal form:
+
+All fields should have atomic values. Atomicity means that all the columns must be split unless their values become unsplittable. So, we cannot use one tuple for two entities, also, we cannot merge the attributes.
+A key must exist in the table which uniquely identifies its tuples.
+In other words, avoid saving values in comma separated format in database. They cause a table to fail the first normal form in most cases.
+
+Problems 1NF Addresses
+There are two cases in which a table fails 1NF and they cause two different problems. If a table saves a multivalued attribute in comma separated format, it becomes difficult to update or insert another value. One must retrieve the whole string, make changes and then put it in the database. While in another case, if one tuple to represent two entities because they have all other attributes values the same.
+
+Normalization to 1NF
+A table can be normalized to 1NF either by adding more columns to make the tuples unique or by using another tuple for every value of a multivalued attribute, based on the property of 1NF the table design is lacking.
+
+Examples
+Example 1
+A table which tracks location of users.
+
+User	Location
+A	33.680565, 73.020199
+B	33.646104, 72.990074
+Here the column Location can be split into two columns so it voilates the property of atomicity.
+
+User	Latitude	Longitude
+A	33.680565	73.020199
+B	33.646104	72.990074
+The table is in 1NF now because the columns have atomic values. Also, there exists a key.
+
+Example 2
+Consider the following table
+
+Username	…	Friends
+A	…	B, C
+B	…	C
+C	…	A
+Here the column Friends is used to store a multivalued attribute. To unfriend C and A we must get the value of A Friends columns, remove C and then put it back. We can easily solve the problem by following the rules of 1NF. To make the table in first normal form we make another tuple for every combination of friends.
+
+Username	…	Has Friend
+A		B
+A		C
+B		C
+C		A
+Doing the transformation may result in losing some stronger normal forms so we must take care of them also.
+
+Example 3
+Product	Size	Price
+A	small	$20
+A	large	$30
+B	small, large	$15
+In the table below a tuple is being used for multiple entities. This may seem good if the price of product B doesn’t depend on the size of but can result in a trouble if we change our mind and want to charge higher for the large size product B. We will always have to create another tuple. So, it is better to have a separate tuple from the beginning.
+
+Product	Size	Price
+A	small	$20
+A	large	$30
+B	small	$15
+B	large	$15
+Example 4
+Consider the table in a database of a taxi company used to keep the record of all the rides.
+
+Username	Driver	…	Pickup Location	Drop-off Location
+A	D1	…	location-a	location-b
+B	D2	…	location-a	Location-c
+A	D1	…	location-a	location-b
+In the above table, we can’t identify the two similar rides person A had. A person can have a similar ride with the same driver. It is a problem, but it can be easily eliminated by adding another column. In this case it can be DateTime which records the date and time of the ride. Hence, we can differentiate the two rides.
+
+Username	Driver	DateTime	…	Pickup Location	Drop-off Location
+A	D1	2018-01-15T13:45:30	…	location-a	location-b
+B	D2	2018-01-15T13:45:30	…	location-a	Location-c
+A	D1	2018-01-20T13:45:30	…	location-a	location-b

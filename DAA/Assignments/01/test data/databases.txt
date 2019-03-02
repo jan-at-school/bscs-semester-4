@@ -1,0 +1,26 @@
+Database is a collection of data organized in such a way that a computer can easily retrieve the information. Data refers to facts which are meaningless unless presented in an organized form. Computer needs highly structured information and that too efficiently accessible and this is what database provides it.
+
+Database technically is an IO software. It takes input to store and gives output about a stored data to the user or another program. Databases generally run on dedicated computers and serves as the data access layer in multitier architecture.
+
+The functionality of a database can be achieved in multiple ways based on the requirements.
+
+Types Of Databases
+There two types of databases
+
+SQL (Relational Database) In SQL databases there is a query string is used which tells the database management systems what information a user or a program needs. The query string is understood by the DBMS and the exact information is returned. SQL databases are relational. They consist of tables known as relations whose rows are called as tuples. Every relation has a key which identifies a tuple. The tuple can then be referenced in another relationship by its key. In SQL it is important to maintain the integrity of data which means that no tuple should be referenced if it is not present. Therefore, SQL databases must remain on a single computer(server). The cost of scalability grows exponentially as the number of users increase. This is because it is difficult to build one computer which can handle all users.
+
+Famous SQL implementations are:
+
+Oracle
+MySql
+Microsoft SQL Server
+NoSQL (Non Relational Database): In noSQL there is no query string. The DBMS can just return a defined group of data known as a document. The application level programmer must maintain the data integrity by himself. NoSQL database can be run on multiple servers, so the load can be divided. The cost grows linearly with the increase in number of users.
+
+Maintaining the consistency is the main part of a no SQL database system.
+
+Famous NoSQL databases are:
+
+MonoDB
+Cassandra
+Redis
+Written by Arifullah Jan

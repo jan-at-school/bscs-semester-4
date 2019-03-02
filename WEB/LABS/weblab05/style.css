@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+/* ******* step 2: box sizing */
+* {
+	box-sizing: border-box;
+}
+
+/* ******* step 3: box sizing */
+
+/* For mobile phones: */
+[class*="col-"] {
+	width: 100%;
+}
+@media only screen and (min-width: 600px) {
+	/* For tablets: */
+	.col-m-4 {width: 25%;}	
+	.col-m-3 {width: 33.33333%;}
+	.col-m-2 {width: 50%;}
+	.col-m-content {
+		width: 100%;
+	}
+	.col-m-sidebar {width: 100%;}
+	.col-m-full {
+		width: 100%;
+		padding: 20px 50px;
+	}
+	[class*="header-"] {
+		padding: none;
+	}
+}
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	.col-4 {width: 25%;}
+	.col-3 {width: 33.33333%;}
+	.col-5 {width: 50%;}
+	.col-content {width: 75%;}
+	.col-sidebar {width: 25%;}
+	.col-full {width: 100%;
+		padding: 20px 100px;
+	}
+	.header-left{
+		padding-left: 100px;
+
+	}
+	.header-right{
+		padding-right: 100px;
+		
+	}
+}
+
+/* ******* step 4: clear both */
+[class*="col-"] {
+	float: left;
+	padding: 5px;
+}
+
+/* ******* step 5: clear both */
+.row::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+
+
+body {
+	font: 15px/24px Nunito, Arial, sans-serif;
+	color: black;
+	margin: 0px;
+	background: #CED7E6;
+	word-wrap: break-word;
+}
+
+h1 {
+	text-align: left;
+	padding: 10px;
+	color: #058;
+}
+
+
+
+.header-outer{
+	width: 100%;
+	height: 50px;
+	background: #42a1f4;
+	color: #072a4e;
+}
+
+.header-left{
+		float: left;
+		height:100%;
+
+}
+.header-right{
+	float: right;
+	height:100%
+	
+}
+
+.header a,.header p {
+	height:100%;
+	color: #072a4e;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+
+.header a:hover {
+	color: white ;
+}
+
+
+
+
+.full {
+	margin: 30px auto;
+	min-height: 600px;
+}
+
+
+
+
+/* Columns : main*/
+
+
+.content{
+	background: #fff;
+
+}
+.content-inner{
+	min-width:150px;
+}
+.sidebar{
+	padding: 10px;
+	background: #42a1f4;
+	text-align: center;
+}
+.sidebar a{
+	clear: right;
+    text-align: center;
+	  width: 100%;
+	  text-decoration: none;
+	  color: white;
+}
+.sidebar a:hover {
+	color: blue;
+}
+
+
+
+
+

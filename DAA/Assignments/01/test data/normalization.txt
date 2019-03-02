@@ -1,0 +1,33 @@
+Normalization in database is a devised process which tries to make the database design less prone to data anomalies which make the database inefficient and redundant. One can easily make a good database design with some experience, but normalization helps to achieve a better possible design; decreasing the odds of some hidden anomaly present in the design.
+
+Database Anomalies
+Anomalies in database make the data handling difficult as the data grows. It makes it harder to maintain data integrity. In most of types of anomalies it even becomes a task to make the data consistent.
+
+Suppose a database table with bad design
+
+Article ID	Article Name	...	...	Author	Author Profile
+186749	Entity Relationship Model	...	...	A	profile-link-a
+352509	Databases	...	...	B	profile-link-b
+730645	Normalization	...	...	A	profile-link-a
+Insertion Anomaly It becomes difficult to insert data since we must add complete details of author with every article. The data becomes prone to inconsistency.
+
+Updation Anomaly Just like insertion, while updating LinkedIn Profile of an author, let's suppose, we must update it in every article of that author.
+
+Deletion Anomaly Suppose we delete a couple of articles and it eliminates an author. We may not want that. This scenario is known as deletion anomaly. It occurs when a last row of such design is deleted, and no such row is left which can tell that an author exists.
+
+This is just one example. A bad and un-normalized database design can cause a whole lot of difficulties in handling the data.
+
+The Normal Forms
+1NF
+In 1NF a table should have a key to distinguish the rows and no column of a tuple should be used to store two different type of attribute values.
+
+2NF
+1NF is must. There should be no partial dependency which means that no non-prime attribute can be dependent on a part of the key.
+
+3NF
+2NF is must. There should be no transitive dependency which means that there can be no non-prime attribute which identifies another non-prime attribute.
+
+BCNF
+3NF is must. Non-prime attribute cannot determine any prime attribute.
+
+Written by Arifullah Jan

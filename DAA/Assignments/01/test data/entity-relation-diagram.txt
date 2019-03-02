@@ -1,0 +1,69 @@
+Entity Relation Model (ER Model) is one of the conceptual data models in which database design is represented in a diagram to visualize relationships among the different data components referred as entities as well as other relationships. ER model primarily focuses on the types of entities, attributes and the relationships among them.
+
+ER model is a major part of the process of making a good database application. It helps in better understanding of the data.
+
+Components
+The main components of an ER model are:
+
+Entity Types
+Entity is anything which has existence. e.g. user/article
+
+Strong Entity Type: Strong entity type can exist independently. They are denoted by rectangle with single border. Example: An article can exist without the article it is related to.
+
+Weak Entity Type: Weak entity type cannot exist independently. It means that they should be removed if the entity in relationship gets removed. Article should not exist without the author.
+
+Relationships
+Relationship is a connection among same or different entity types and represents a part of information the database is built to preserve. For example, in the database of XplainD the relationship ‘Written-By’ (article - written by - user) represents an important information about the author of an article.
+
+Let us quickly go through the relationship types:
+
+Identifying vs Non Identifying Relationship: In identifying relationship the connected entity is always a weak entity and is identified by the key of the strong entity of the relationship while the non-identifying relationship has entities with their own keys or partial keys.
+
+Total and Partial Participation: Total and Partial Participation of entity type tells whether all of the instances are the part of the particular relationship or not. Every entity type in the relationship has corresponding participation type which is denoted by the type of line connecting them. Double line for total participation which means that all instances are there in the relationship e.g. Single line is for partial participation which means that there can be instances of the entity type which may not be a part of the relationship. This property is only associated with many to many or one to many relationship types.
+
+Attributes
+An attribute belongs to an entity or a relationship (not entity type or relationship type) and contains a part of information about that entity or relationship. An entity may have one or more attributes while relationship is not bound to have an attribute.
+
+Cardinalities
+Cardinalities are associated with entity types in a relationship. It tells whether a relationship is one to one , one to many or many to many. Cardinality of a entity type is denoted by a number or a letter with the relationship connector. 1 and 1 generally for one to one, 1 and N generally for one to many and M and N for many to many.
+
+Symbols:
+Entity Relationship Model - Symbols
+Example
+Let us make the ER diagram for XplainD. We have to keep the following requirements in mind:
+
+The entities are article and author.
+Important aspects of an article we need to store are id, title, description, body, related articles, time and the time edited.
+For authors we need to save id, name, address and Linkedin profile.
+Other important requirements are
+To save which author edited which article at what time.
+To save the location of the article in the hierarchy.
+Step 1
+First, we will pick the entities and try to make attribute for every information about that entity. Skip the things which cannot be put in attributes e.g. the editors of an article. We will take care of them in step 2.
+
+The attributes of article are
+
+Entity Relationship Model - Article
+Notice that ‘Related Pages’ and ‘Images’ are multivalued attributes.
+
+The attributes of author are
+
+Entity Relationship Model - Author
+Where,
+
+‘Address’ is a composite attribute of street address, city and country.
+‘Age’ is a derived attribute which means that it can be calculated on the application level using ‘Date of Birth’.
+Step 2
+Now we try to identify the relationships and their types which will preserve the required information.
+
+Author of an Article: Author could have been the attribute of the article but as you see the author itself is an entity, in ER diagram it is represented by a relationship. There is only one author for an article and an author can have multiple articles, so the relationship will be one to many (one author to many articles).
+
+Entity Relationship Model - Author of Article
+In the above relationship the double line denotes total participation which means that all articles will have an author while the single line corresponding to Author denotes partial participation and means that there may be authors who have written no article.
+
+Editors of an Article: Here we need to link the article with authors who have edited that article and the time of edit. Since an article can be edited by multiple authors the relationship will be many to many. Hence, we have the following relationship
+
+Entity Relationship Model - Editor of Article
+Notice that we can’t find out the last edit time of an article from this relationship, so we do not need to save the last edit time in a separate attribute. We add a derived attribute for ‘Time Edited’
+
+Location of article: Saving the hierarchy for every article in an attribute is tedious. We store this information in a relationship. It will be a recursive relationship. The complete hierarchy of an article can be determined on application level, so we add a derived attribute ‘Hierarchy’ to the entity type article. da

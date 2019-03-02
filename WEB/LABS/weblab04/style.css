@@ -1,0 +1,294 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+body {
+	font: 15px/24px Nunito, Arial, sans-serif;
+	color: black;
+	margin: 0px;
+	background: #CED7E6;
+	word-wrap: break-word;
+}
+
+h1 {
+	text-align: left;
+	padding: 10px;
+	color: #058;
+}
+
+
+table{
+	width: 100%;
+	border: 1px;
+	border-spacing: 0px;
+	min-height: 100%
+}
+td{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+
+
+.header-outer{
+	width: 100%;
+	height: 50px;
+	background: #42a1f4;
+	color: white;
+}
+
+.header-left{
+	float: left;
+	padding-left: 100px;
+
+}
+.header-right{
+	float: right;
+	padding-right: 100px;
+	
+}
+
+.header a,p {
+	height: 100%;
+	float: left;
+    color: #f2f2f2;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+.header a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+
+.outwrap {
+	width: 980px;
+	margin: 30px auto;
+	border: 1px black;
+}
+
+.inwrap {
+	padding: 20px 20px;
+	min-height: 600px;
+	height: auto;
+}
+
+
+.content{
+	float: left;
+  width: 690px;
+	background: #fff;
+	color: black;
+
+}
+
+
+
+.container-1 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.container-1 input#search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-1 input#search{
+  width: 300px;
+  height: 50px;
+  margin: auto;
+  background: #b2e4f7;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 45px;
+  border-radius: 5px;
+ 
+}
+.container-1 .icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar{
+	float: right;
+	width: 230px;
+	padding: 10px;
+	background: #42a1f4;
+}
+.sidebar a{
+	clear: right;
+    text-align: center;
+	  width: 230px;
+	  text-decoration: none;
+	  color: white;
+}
+.sidebar a:hover {
+	color: blue;
+}
+
+/*
+.content {
+  border: 1px solid;  
+  text-align: left;
+  float: left;
+}
+
+.clear{
+  clear: left;
+}
+
+
+
+.sidebar {
+  border: 1px solid;  
+  text-align: center;
+  float: left;
+  clear: left;
+}
+
+
+*/
+.footer-outer{
+	width: 100%;
+	height: 65%;
+	align-content: center;
+	color: black;
+}
+
+.footer-inner{
+	width: 60%;
+	box-sizing: border-box;
+	margin: 0px auto;
+	padding-top: 20px;
+}
+
+/*
+.adview-outer{
+	width: 100%;
+	height: 65%;
+	align-content: center;
+	color: white;
+}
+
+.adview-inner{
+	width: 60%;
+	box-sizing: border-box;
+	margin: 0px auto;
+	padding-top: 20px;
+}
+
+
+
+.outwrap {
+	width: 70%;
+	margin: 10px auto;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inwrap {
+	padding: 20px 20px;
+	min-height: 600px;
+	height: auto;
+}
+
+
+
+.content-text{
+	color: black;
+	text-align: left;
+}
+
+.content td{
+	padding: 10px;
+
+}
+.content img{
+	height: 100px;
+	width: 160px;
+}
+
+
+
+
+
+
+
+
+
+.subjects-menu{
+	background: black;
+	box-sizing: border-box;
+	width: 100%
+	margin: 5px;
+}
+
+.subjects-menu div{
+	width: 100%;
+}
+.subjects-menu a{
+    color: #888;
+	margin: 10px;
+    text-decoration: none;
+}
+
+.subjects-menu div:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+
+
+
+
+
+
+.current-chapter-menu{
+	box-sizing: border-box;
+	width: 100%
+	margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+*/

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<body>
+
+<button type="button" id='submitButton'>Get my CD collection</button>
+<br><br>
+<table id="demo"></table>
+<div id="error"></div>
+<script src="jquery-3.2.1.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		alert('jQuery is working');
+		$('#submitButton').on('click', function(){
+			alert('click is working');
+			// your ajax call here e.g. $.ajax({ url: 'cd_catalog.xml', ...})
+		  $.ajax({
+       url: 'cd_catalog.xml',
+       type: 'GET',
+       dataType: 'xml',
+       success: function (data) {
+          var table="<tr><th>Title</th><th>Artist</th><th>Country</th><th>Company</th><th>Price</th><th>Year</th></tr>";
+          $.each(data.getElementsByTagName('CD'), function(){
+            //alert('"each" call');
+            table += "<tr><td>" + this.getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</td><td>" + this.getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</td>";
+            table += "<td>" + this.getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue + "</td><td>" + this.getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue + "</td>";
+            if ($(this).find("PRICE").attr("currency")=="$"){
+            add = "$"+this.getElementsByTagName("PRICE")[0].childNodes[0].nodeValue;
+            }
+            else{
+              add = this.getElementsByTagName("PRICE")[0].childNodes[0].nodeValue;
+            }
+            table += "<td>" + add + "</td><td>" + this.getElementsByTagName("YEAR")[0].childNodes[0].nodeValue + "</td></tr>";
+          });
+          $('body').append(table);
+        }
+      });
+
+		});
+	});
+</script>
+
+</script>
+
+</body>
+</html>

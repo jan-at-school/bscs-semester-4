@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style type="text/css">
+    table{
+        width: 100%;
+     //   border-collapse: collapse;
+    }
+    table, th, td{
+         border: 1px solid black;
+    border-collapse: collapse;
+    }
+    table th, table td{
+        padding: 5px;
+    text-align: center;
+    }
+</style>
+
+<title>AJAX JSON</title>
+
+<script src="jquery-3.2.1.js"></script>
+</head>
+
+<body>
+<button type="button" id='submitButton'>Fetch Data</button>
+<br><br>
+<div id="location"></div>
+
+<script>
+$(document).ready(function(){
+	alert('jQuery is working!')
+	$('#submitButton').on('click', function(){
+        	$.ajax({
+            		url: 'emp_data.json',
+            		dataType: 'json',
+            		success: function(data){
+
+             		  var table = "<table><thead><tr><th>Name</th><th>Designation</th><th>Salary</th><th>Joinin Date</th><th>Office</th><th>Extension</th></tr></thead>";
+           		   $(data.empolyees).each(function(index){
+         	           table += '<tr><td>' + data.empolyees[index].name  + '</td>' +
+                    	   '<td>' + data.empolyees[index].designation  + '</td>' +
+                           '<td>' + data.empolyees[index].salary  + '</td>' +
+                           '<td>' + data.empolyees[index].joining_date  + '</td>' +
+                           '<td>' + data.empolyees[index].office  + '</td>' +
+                           '<td>' + data.empolyees[index].extension + '</td>' +
+                           '</tr>';
+                  	 });
+                	table += '</table>';
+                	$("#location").append(table);
+            	},
+            	// error: function(res, status){
+            	//    alert(status + res);
+            	// }
+        	});
+    	});
+});
+
+</script>
+
+</body>
+</html>

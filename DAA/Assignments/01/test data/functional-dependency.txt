@@ -1,0 +1,32 @@
+A functional dependency in databases is a dependency which satisfies the properties of a function.
+
+A dependency exists in a database table when an attribute value is dependent on the value of a single or a group of attributes. The dependency is functional when it satisfies the properties of a function and the main property of a function is that it gives a single value for some input. In other words, if the value of dependent attribute/s is same for some value of the determinant attribute/s in all the tuples then it is a functional dependency.
+
+Symbol
+A functional dependency is denoted by ‘?’
+
+e.g. A ? B 
+Where A is the determinant attribute and B is the dependent attribute. A ? B can be read as A determines B.
+
+Types of functional dependencies
+Trivial dependency: If the dependent is a subset of the determinant. As the name suggests trivial dependency is something which does exist but is of no importance. 
+e.g. AB ? B
+
+Non-Trivial dependency: In non-trivial dependency the dependent part is not a subset of the determinant part.
+
+Transitive dependency: If a functional dependency is achieved through two functional dependencies indirectly then the dependency is called transitive dependency. 
+e.g. A ? B and B ? C suggests A ? C
+
+Example
+To find out if a dependency is functional check whether the dependent attribute is same for some value of the determinant attribute through out the table.
+
+Consider the following table
+
+Col1	Col2	Col3
+A	3	5
+B	5	4
+A	3	8
+B	5	4
+Col1 ? Col2 is valid since the value is same for both As and both Bs. Col1 ? Col3 is invalid since for the second A the value of Col3 is 8 which should’ve been 5.
+
+Written by Arifullah Jan

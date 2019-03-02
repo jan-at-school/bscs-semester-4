@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE data [
+   <!ELEMENT data (courses,students)>
+   <!ELEMENT courses (course*)>
+   <!ELEMENT students (student*)>
+   <!ELEMENT course 
+        (course-name, department, allowable-student-status)>
+        
+   <!ATTLIST course id IDREF #REQUIRED>
+   <!ELEMENT course-name (#PCDATA)>
+   <!ELEMENT department	(#PCDATA)>
+   <!ELEMENT allowable-student-status (studentStatus+)>
+   
+   
+   
+   <!ELEMENT student 
+        (name, phone, address,courses-taken+,studentStatus, degree?)>
+        
+    
+   <!ATTLIST student id IDREF #REQUIRED>      
+   <!ELEMENT name (#PCDATA)>    
+   <!ELEMENT phone (#PCDATA)>    
+   <!ELEMENT address (stno, street-name, city, province)>    
+   <!ELEMENT courses-taken (courseTaken)>    
+   <!ELEMENT studentStatus EMPTY>
+   <!ATTLIST studentStatus status (degree | special) #REQUIRED>
+   <!ELEMENT degree EMPTY>
+   <!ATTLIST degree name (BSc | BEng | BA) #IMPLIED>
+   
+       
+   <!ELEMENT courseTaken EMPTY>
+   <!ATTLIST courseTaken courseId IDREF #REQUIRED>
+   <!ELEMENT stno (#PCDATA)>   
+   <!ELEMENT street-name (#PCDATA)>   
+   <!ELEMENT city (#PCDATA)>   
+   <!ELEMENT province (#PCDATA)>
+]>
+
+<data>
+
+  <courses>
+      <course id="x239">
+          <course-name>OOP</course-name>
+          <department>seecs</department>
+          <allowable-student-status>
+              <studentStatus status="degree"/>
+              <studentStatus status="special"/>
+          </allowable-student-status>
+      </course>
+      
+      <course id="x45">
+          <course-name>FOCP</course-name>
+          <department>seecs</department>
+          <allowable-student-status>
+              <studentStatus status="degree"/>
+              <studentStatus status="special"/>
+          </allowable-student-status>
+      </course>
+      
+      <course id="x22339">
+          <course-name>Accounting I</course-name>
+          <department>NBS</department>
+          <allowable-student-status>
+              <studentStatus status="degree"/>
+          </allowable-student-status>
+      </course>
+      
+  </courses>
+  <students>
+      <student id="x4534">
+          <name>Ahemd</name>
+          <phone>03001234567></phone>
+          <address>
+              <stno>5646</stno>
+              <street-name>Street A</street-name>
+              <city>Islamabad</city>
+              <province>ICT</province>
+              
+          </address>
+          <courses-taken>
+              <courseTaken courseId="x239"/>
+              <courseTaken courseId="x22339"/>
+          </courses-taken>
+          <studentStatus status="degree"/>
+          <degree name="BSc"/>
+          
+      </student>
+      
+      
+      
+      
+      
+      <student id="x3454">
+          <name>Ali</name>
+          <phone>03001234567></phone>
+          <address>
+              <stno>21</stno>
+              <street-name>Street B</street-name>
+              <city>Peshawar</city>
+              <province>KPK</province>
+              
+          </address>
+          <courses-taken>
+              <courseTaken courseId="x22339"/>
+          </courses-taken>
+          <studentStatus status="degree"/>
+          <degree name="BA"/>
+          
+      </student>
+      
+      
+      
+      
+      
+      
+      
+      
+      <student id="x5435">
+          <name>Arif</name>
+          <phone>03001234567></phone>
+          <address>
+              <stno>5646</stno>
+              <street-name>Street R</street-name>
+              <city>Lahore</city>
+              <province>AO</province>
+              
+          </address>
+          <courses-taken>
+              <courseTaken courseId="x239"/>
+          </courses-taken>
+          <studentStatus status="special"/>
+          <degree name="BSc"/>
+          
+      </student>
+      
+      
+      
+      
+      
+  </students>
+</data>

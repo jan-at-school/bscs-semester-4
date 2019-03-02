@@ -1,0 +1,51 @@
+html {
+  background: #bebece;
+  color: #4286f4;
+}
+
+
+#display{
+	border: none;
+	background: black;
+	color:white;
+	
+
+}
+
+
+
+
+.outwrap {
+  	width:600px;
+    margin:50px auto;
+  	background:#fff;
+  	border-radius:5px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+
+.inwrap {
+  padding:20px 20px;
+  min-height: 600px;
+  height: auto;
+  background: grey;
+}
+.calc-table{
+	width: 100%;
+}
+
+.calc-table td{
+	padding: 10px;
+	height: 80px;
+}
+
+
+[class*="button-"] {
+	height: 100%;
+	width: 100%;
+	background: white;
+}
+
+.calculator{
+
+}

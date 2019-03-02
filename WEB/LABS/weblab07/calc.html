@@ -1,0 +1,210 @@
+<html>  
+ <head>
+    <title>calculator based on javascript.</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <script type="text/javascript">
+
+
+
+
+    function isDisplayEmpty() {
+      if(document.getElementById("display").innerHTML==""){
+        return true;
+      }
+      else
+      {return false;} 
+    }
+
+
+    function memory() {
+      if(document.getElementById("memory").innerHTML==""){
+        return 0;
+      }
+      else{
+        return document.getElementById("memory").innerHTML;
+      } 
+    }
+
+
+    function ms() {
+
+       document.getElementById("memory").innerHTML=calculate();
+    }
+    function mc() {
+       document.getElementById("memory").innerHTML="";
+    }
+
+
+
+
+      var nextNUM=function(a) {
+
+        document.getElementById("display").innerHTML+=a;
+      }
+
+      var nextOper=function(a) {
+        document.getElementById("display").innerHTML+=a;
+      }
+      var clear=function(){
+        document.getElementById("display").innerHTML="";
+      }
+
+
+      var calculate=function(){
+          return document.getElementById("display").innerHTML=eval(document.getElementById("display").innerHTML);
+      }
+
+
+      var oneOverX = function(){
+        var a= calculate();
+        document.getElementById("display").innerHTML = 1/a;
+      }
+
+
+      var sqrta = function(){
+        var a= calculate();
+        document.getElementById("display").innerHTML = sqrt(a);
+      }
+
+      var negative = function(){
+        
+        document.getElementById("display").innerHTML = calculate()*-1;
+      }
+
+
+      var calculate=function(){
+          return document.getElementById("display").innerHTML=eval(document.getElementById("display").innerHTML);
+      }
+
+
+    </script>
+    <style>html {
+  background: #bebece;
+  color: #4286f4;
+}
+
+
+#display{
+  border: none;
+  background: black;
+  color:white;
+  
+
+}
+
+
+
+
+.outwrap {
+    width:600px;
+    margin:50px auto;
+    background:#fff;
+    border-radius:5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+.inwrap {
+  padding:20px 20px;
+  min-height: 600px;
+  height: auto;
+  background: grey;
+}
+.calc-table{
+  width: 100%;
+}
+
+.calc-table td{
+  padding: 10px;
+  height: 80px;
+}
+
+
+[class*="button-"] {
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+.calculator{
+
+}</style>
+  </head>
+  
+
+  <body>
+    <h1>JavaScript Calculator</h1>
+
+    <div class="outwrap">
+
+      <div class="inwrap" background="http://images.all-free-download.com/images/graphiclarge/metal_background_of_highdefinition_picture_2_169714.jpg">
+        
+
+        <table class="calc-table">
+            
+            <tr>
+              
+              <td colspan="4" id="display" class="display"></td>
+              
+            </tr>
+
+            <tr>
+              <td><button class="button-num" onclick="nextNUM(7)">7</button></td>
+              <td><button class="button-num" onclick="nextNUM(8)">8</button></td>
+              <td><button class="button-num" onclick="nextNUM(9)">9</button></td>
+              <td><button class="button-method" onclick="nextOper('+')">+</button></td>
+
+            </tr>
+
+            <tr>
+              
+              <td><button class="button-num" onclick="nextNUM(4)">4</button></td>
+              <td><button class="button-num" onclick="nextNUM(5)">5</button></td>
+              <td><button class="button-num" onclick="nextNUM(6)">6</button></td>
+              <td><button class="button-method" onclick="nextOper('-')">-</button></td>
+              
+            </tr>
+
+            <tr>
+              
+              <td><button class="button-num" onclick="nextNUM(1)">1</button></td>
+              <td><button class="button-num" onclick="nextNUM(2)">2</button></td>
+              <td><button class="button-num" onclick="nextNUM(3)">3</button></td>
+              <td><button class="button-method" onclick="nextOper('*')">*</button></td>
+              
+            </tr>
+
+             <tr>
+
+              <td><button class="button-method" onclick="clear()">C</button></td>
+              <td><button class="button-method" onclick="sqrta()">sqrt</button></td>
+              <td><button class="button-method" onclick="negative()">+/-</button></td>
+              <td><button class="button-method" onclick="calculate()">=</button></td>
+            </tr>
+
+
+            <tr>
+
+              <td><div id="memory" class="button-method"></div></td>
+              <td><button class="button-method" onclick="ms()">MS</button></td>
+              <td><button class="button-method" onclick="mc()">MC</button></td>
+            </tr>
+
+        </table>
+
+
+
+
+      </div>
+
+    </div>
+
+    
+
+  </body>
+    
+</html>
+ 
